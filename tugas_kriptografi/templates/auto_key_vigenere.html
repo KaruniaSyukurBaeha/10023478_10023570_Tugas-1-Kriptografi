@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Key Vigenere Cipher</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+{% include 'navbar.html' %}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Auto-Key Vigenere Cipher</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="form-group">
+                    <label for="text">Text:</label>
+                    <input type="text" class="form-control" id="text" name="text" required>
+                </div>
+                <div class="form-group">
+                    <label for="key">Key:</label>
+                    <input type="text" class="form-control" id="key" name="key" required>
+                </div>
+                <div class="form-group">
+                    <label for="mode">Mode:</label>
+                    <select class="form-control" id="mode" name="mode">
+                        <option value="encrypt">Encrypt</option>
+                        <option value="decrypt">Decrypt</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        {% if result %}
+            <div class="card-footer">
+                <h4>Result:</h4>
+                <p>{{ result }}</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>
